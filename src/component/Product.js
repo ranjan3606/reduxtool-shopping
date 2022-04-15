@@ -5,13 +5,12 @@ import {fetchProducts, STATUSES} from '../store/productSlice'
 
 function Product() {
   const dispatch = useDispatch()
-  // const [products, setProducts] = useState([]);
   const {data: products, status} = useSelector((state) => state.product)
 
 
   useEffect(() => {
     dispatch(fetchProducts())
-  }, []);
+  });
 
 const handleAdd = (product) => {
   dispatch(add(product))
